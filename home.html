@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE RAIL</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #202124;
+            color: #ffffff;
+        }
+        header {
+            background-color: #c21808;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+        nav a {
+            display: inline-block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #c21808;
+        }
+        section {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+		}
+		.product {
+			border: 2px solid #c21808;
+			background-color: #202124;
+			margin: 20px;
+			padding: 20px;
+			width: calc(25% - 40px);
+			box-sizing: border-box;
+			box-shadow: 0 0 15px rgba(0,0,0,0.4);
+			transition: transform 0.3s ease;
+		}
+
+		@media screen and (max-width: 1200px) {
+			.product {
+				width: calc(33.33% - 40px);
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			.product {
+				width: calc(50% - 40px);
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			.product {
+				width: calc(100% - 40px);
+			}
+		}
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        footer {
+            background-color: #333;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+		footer {
+			background-color: #202124;
+			color: #ffffff;
+			padding: 20px;
+			text-align: center;
+			bottom: 0;
+			width: 100%;
+		}
+
+		footer ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		footer li {
+			display: inline-block;
+			margin: 0 10px;
+		}
+
+		footer a {
+			color: #ffffff;
+			text-decoration: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: 2px solid #c21808;
+			transition: all 0.3s ease;
+		}
+
+		footer a:hover {
+			background-color: #c21808;
+		}
+
+        .cart-item {
+            padding: 10px;
+            border-bottom: 1px solid #c21808;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+		 #search-bar {
+            position: relative;
+            display: inline-block;
+        }
+        #search-input {
+            padding: 10px 30px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f0f0f0;
+            font-size: 16px;
+            color: #333;
+            outline: none;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+        #search-input:focus {
+            width: 300px;
+        }
+        #search-button {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        #search-button img {
+            width: 20px;
+            height: 20px;
+            fill: #999;
+            transition: all 0.3s ease;
+        }
+        #search-button img:hover {
+            fill: #c21808; 
+            transform: scale(1.1);
+        }
+
+		#contact {
+            padding: 40px 20px;
+            color: #fff;
+            text-align: center;
+        }   
+        #contact p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #c21808;
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            line-height: 1.4;
+            color: #ccc;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #c21808;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+            font-size: 1.2em;
+            resize: none;
+            outline: none;
+        }
+
+        .contact-form input[type="submit"] {
+            width: 100%;
+            background-color: #c21808;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #9b1306;
+        }
+		
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="font-size: 2.5em;">THE RAIL</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a></li>
+    <a href="products.html">Products</a></li>
+    <a href="aboutUs.html">About Us</a></li>
+    <a href="contactUs.html">Contact Us</a></li>
+
+    <div id="search-bar">
+        <input type="text" id="search-input" placeholder="Search products...">
+        <button id="search-button"><img src="https://img.icons8.com/ios-filled/50/000000/search--v1.png" alt="Search"></button>
+    </div>
+</nav>
+
+<section id="home"> 
+    <div class="category">
+		<h2>HOME</h2>
+	</div>
+	<video controls width="1040" height="760" poster="video-poster.jpg">
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
+</section>
+
+<footer style="background-color: #333; color: #ffffff; padding: 20px; text-align: center; bottom: 0; width: 100%;">
+    <ul>
+        <li><a href="#Terms of Service">Terms of Service</a></li>
+        <li><a href="#Privacy Policy">Privacy Policy</a></li>
+		<li><a href="#Shipping Returns">Shipping Returns</a></li>
+    </ul>
+    <p style="margin-top: 20px;">&copy; 2024 The Rail Online Store. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

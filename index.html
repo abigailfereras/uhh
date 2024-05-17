@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel ="stylesheet" href= "styles.css">
+    <title>The Rail #1 Best Skateboard Site In The World</title>
+</head>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            position: relative; 
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+            overflow: hidden; 
+        }
+        video {
+            width: 100%;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .container {
+            text-align: center;
+            z-index: 1; 
+            position: relative; 
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            color: #c21808;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            color: #c21808;
+        }
+        .btn-container {
+            margin-top: 20px; 
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #000000;
+            background-color: #c21808;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #af1607;
+        }
+    </style>
+<body>
+    <div class="video-background">
+        <!-- Embedding the video -->
+        <video autoplay loop muted poster="video-poster.jpg">
+            <source src="landing.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="container">
+        <h1>THE RAIL</h1>
+        <p>Your journey to amazing experiences starts here.</p>
+        <div class="btn-container">
+            <a href="home.html" class="btn">Get Started</a>
+        </div>
+    </div>
+</body>
+</html>
